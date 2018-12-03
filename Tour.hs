@@ -2,9 +2,10 @@ module Tour
 where
 
 import Board
+import Control.Parallel.Strategies
 
 run :: Int -> Int -> [Maybe Board.Board]
-run x y = map (\(a, b) -> tour a b 1 $ Just $ Board.intialize x y) [(x, y) | x <- [0..(x-1)], y <- [0..(y-1)]]
+run x y = parMap rseq (\(a, b) -> tour a b 1 $ Just $ Board.intialize x y) [(x, y) | x <- [0..(x-1)], y <- [0..(y-1)]]
     
 
 tour :: Int -> Int -> Int -> Maybe Board.Board-> Maybe Board.Board
