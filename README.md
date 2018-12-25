@@ -29,4 +29,5 @@ $> ./main 4 4 +RTS -N2
 * Add Pretty Printing so the output is nicer to look at
 * Add support for saving directly to file instead of needing to pipe it
 * Cleanup Board Module
-* Cleanup Recursive calls in Tour Module
+* Find builtin library function to replace `safeHead`
+* ~~Cleanup Recursive calls in Tour Module~~
